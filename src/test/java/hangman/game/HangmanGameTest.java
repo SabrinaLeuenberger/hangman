@@ -21,6 +21,12 @@ public class HangmanGameTest {
 	}
 
 	@Test
+	public void testWordToGuess() {
+		HangmanGame game = new HangmanGame("TEST", 1);
+		assertEquals("TEST", game.getWordToGuess());
+	}
+
+	@Test
 	public void testGuessPresentCharacter() {
 		HangmanGame game = new HangmanGame("Hello", 2);
 		assertTrue(game.guessCharacter('E'));

@@ -51,4 +51,13 @@ public class HangmanGame {
 		}
 		return wonGame;
 	}
+
+	@Override
+	public String toString() {
+		return "Actual result: " + String.copyValueOf(displayedWord) + "\nRemaining lives: " + remainingLives;
+	}
+
+	public String getWordToGuess() {
+		return wordToGuess;
+	}
 }
