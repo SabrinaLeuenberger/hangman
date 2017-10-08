@@ -29,7 +29,6 @@ public class MainWindow extends Application {
 	}
 
 	public MainWindow() {
-
 		driver.setLives(5);
 
 		List<String> words = new ArrayList<>();
@@ -45,9 +44,10 @@ public class MainWindow extends Application {
 
 	@Override
 	public void start(Stage primaryStage) {
-		primaryStage.setTitle("Hangman by lsa");
+		primaryStage.setTitle("Hangman by hearts");
 
 		Button newGameBtn = new Button("New Game");
+		// Verknüpfung des Buttons mit der methode createNewGame
 		newGameBtn.setOnAction(new EventHandler<ActionEvent>() {
 			@Override
 			public void handle(ActionEvent event) {
@@ -55,41 +55,42 @@ public class MainWindow extends Application {
 				displayStatus();
 			}
 		});
-
-		FlowPane btnPane = new FlowPane();
-
-		btnPane.getChildren().add(createGuessButton('A'));
-		btnPane.getChildren().add(createGuessButton('B'));
-		btnPane.getChildren().add(createGuessButton('C'));
-		btnPane.getChildren().add(createGuessButton('D'));
-		btnPane.getChildren().add(createGuessButton('E'));
-		btnPane.getChildren().add(createGuessButton('F'));
-		btnPane.getChildren().add(createGuessButton('G'));
-		btnPane.getChildren().add(createGuessButton('H'));
-		btnPane.getChildren().add(createGuessButton('I'));
-		btnPane.getChildren().add(createGuessButton('J'));
-		btnPane.getChildren().add(createGuessButton('K'));
-		btnPane.getChildren().add(createGuessButton('L'));
-		btnPane.getChildren().add(createGuessButton('M'));
-		btnPane.getChildren().add(createGuessButton('N'));
-		btnPane.getChildren().add(createGuessButton('O'));
-		btnPane.getChildren().add(createGuessButton('P'));
-		btnPane.getChildren().add(createGuessButton('Q'));
-		btnPane.getChildren().add(createGuessButton('R'));
-		btnPane.getChildren().add(createGuessButton('S'));
-		btnPane.getChildren().add(createGuessButton('T'));
-		btnPane.getChildren().add(createGuessButton('U'));
-		btnPane.getChildren().add(createGuessButton('V'));
-		btnPane.getChildren().add(createGuessButton('W'));
-		btnPane.getChildren().add(createGuessButton('X'));
-		btnPane.getChildren().add(createGuessButton('Y'));
-		btnPane.getChildren().add(createGuessButton('Z'));
+		// ein flowPane welches die Buchstaben Buttons aufnimmt
+		FlowPane letterBtnPane = new FlowPane();
+		// die Buttons, die erlauben einen Btn zu wählen
+		// werden dem letterBtnPane zugefügt
+		letterBtnPane.getChildren().add(createGuessButton('A'));
+		letterBtnPane.getChildren().add(createGuessButton('B'));
+		letterBtnPane.getChildren().add(createGuessButton('C'));
+		letterBtnPane.getChildren().add(createGuessButton('D'));
+		letterBtnPane.getChildren().add(createGuessButton('E'));
+		letterBtnPane.getChildren().add(createGuessButton('F'));
+		letterBtnPane.getChildren().add(createGuessButton('G'));
+		letterBtnPane.getChildren().add(createGuessButton('H'));
+		letterBtnPane.getChildren().add(createGuessButton('I'));
+		letterBtnPane.getChildren().add(createGuessButton('J'));
+		letterBtnPane.getChildren().add(createGuessButton('K'));
+		letterBtnPane.getChildren().add(createGuessButton('L'));
+		letterBtnPane.getChildren().add(createGuessButton('M'));
+		letterBtnPane.getChildren().add(createGuessButton('N'));
+		letterBtnPane.getChildren().add(createGuessButton('O'));
+		letterBtnPane.getChildren().add(createGuessButton('P'));
+		letterBtnPane.getChildren().add(createGuessButton('Q'));
+		letterBtnPane.getChildren().add(createGuessButton('R'));
+		letterBtnPane.getChildren().add(createGuessButton('S'));
+		letterBtnPane.getChildren().add(createGuessButton('T'));
+		letterBtnPane.getChildren().add(createGuessButton('U'));
+		letterBtnPane.getChildren().add(createGuessButton('V'));
+		letterBtnPane.getChildren().add(createGuessButton('W'));
+		letterBtnPane.getChildren().add(createGuessButton('X'));
+		letterBtnPane.getChildren().add(createGuessButton('Y'));
+		letterBtnPane.getChildren().add(createGuessButton('Z'));
 
 		VBox vbox = new VBox();
 		vbox.getChildren().add(newGameBtn);
 		vbox.getChildren().add(remainingLivesLbl);
 		vbox.getChildren().add(displayedWordLbl);
-		vbox.getChildren().add(btnPane);
+		vbox.getChildren().add(letterBtnPane);
 
 		StackPane root = new StackPane();
 		root.getChildren().add(vbox);
