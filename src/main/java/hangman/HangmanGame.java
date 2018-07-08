@@ -1,17 +1,18 @@
-package hangman.game;
+package hangman;
 
-public class HangmanGameOld {
+public class HangmanGame {
 
 	private String wordToGuess;
 	private int remainingLives;
 	private char[] displayedWord;
+	private char hiddenChar = '_';
 
-	public HangmanGameOld(String wordToGuess, int lives) {
+	public HangmanGame(String wordToGuess, int lives) {
 		this.wordToGuess = wordToGuess.toUpperCase();
 		this.remainingLives = lives;
 		displayedWord = new char[wordToGuess.length()];
 		for (int i = 0; i < wordToGuess.length(); i++) {
-			displayedWord[i] = '#';
+			displayedWord[i] = hiddenChar;
 		}
 	}
 
@@ -45,7 +46,7 @@ public class HangmanGameOld {
 	public boolean isGameWon() {
 		boolean wonGame = true;
 		for (int i = 0; i < displayedWord.length; i++) {
-			if (displayedWord[i] == '#') {
+			if (displayedWord[i] == hiddenChar) {
 				wonGame = false;
 			}
 		}
