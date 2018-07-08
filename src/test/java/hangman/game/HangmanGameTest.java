@@ -10,25 +10,25 @@ public class HangmanGameTest {
 
 	@Test
 	public void testRemainingLives() {
-		HangmanGame game = new HangmanGame("Hello", 5);
+		HangmanGameOld game = new HangmanGameOld("Hello", 5);
 		assertEquals(5, game.getRemainingLives());
 	}
 
 	@Test
 	public void testDisplayedWord() {
-		HangmanGame game = new HangmanGame("Hello", 1);
+		HangmanGameOld game = new HangmanGameOld("Hello", 1);
 		assertEquals("#####", game.getDisplayedWord());
 	}
 
 	@Test
 	public void testWordToGuess() {
-		HangmanGame game = new HangmanGame("TEST", 1);
+		HangmanGameOld game = new HangmanGameOld("TEST", 1);
 		assertEquals("TEST", game.getWordToGuess());
 	}
 
 	@Test
 	public void testGuessPresentCharacter() {
-		HangmanGame game = new HangmanGame("Hello", 2);
+		HangmanGameOld game = new HangmanGameOld("Hello", 2);
 		assertTrue(game.guessCharacter('E'));
 		assertEquals("#E###", game.getDisplayedWord());
 		assertTrue(game.guessCharacter('l'));
@@ -38,7 +38,7 @@ public class HangmanGameTest {
 
 	@Test
 	public void testGuessAbsentCharacter() {
-		HangmanGame game = new HangmanGame("Hello", 2);
+		HangmanGameOld game = new HangmanGameOld("Hello", 2);
 		assertFalse(game.guessCharacter('F'));
 		assertEquals("#####", game.getDisplayedWord());
 		assertEquals(1, game.getRemainingLives());
@@ -46,7 +46,7 @@ public class HangmanGameTest {
 
 	@Test
 	public void testGameLost() {
-		HangmanGame game = new HangmanGame("Hello", 2);
+		HangmanGameOld game = new HangmanGameOld("Hello", 2);
 		assertFalse(game.isGameLost());
 		game.guessCharacter('F');
 		assertFalse(game.isGameLost());
@@ -56,7 +56,7 @@ public class HangmanGameTest {
 
 	@Test
 	public void testGameWon() {
-		HangmanGame game = new HangmanGame("HE", 2);
+		HangmanGameOld game = new HangmanGameOld("HE", 2);
 		assertFalse(game.isGameWon());
 		game.guessCharacter('H');
 		assertFalse(game.isGameWon());

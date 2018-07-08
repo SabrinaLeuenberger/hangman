@@ -8,13 +8,13 @@ import java.util.List;
 
 import org.junit.Test;
 
-import hangman.game.HangmanGame;
+import hangman.game.HangmanGameOld;
 
 public class GameDriverTest {
 
 	@Test
 	public void testNewGame() {
-		GameDriver driver = new GameDriver();
+		GameDriverOld driver = new GameDriverOld();
 		driver.setLives(4);
 
 		List<String> wordList = new ArrayList<>();
@@ -22,7 +22,7 @@ public class GameDriverTest {
 		driver.setWordList(wordList);
 
 		driver.createNewGame();
-		HangmanGame game = driver.getCurrentGame();
+		HangmanGameOld game = driver.getCurrentGame();
 
 		assertNotNull(game);
 		assertEquals(4, game.getRemainingLives());

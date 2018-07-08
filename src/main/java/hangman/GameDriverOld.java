@@ -3,21 +3,21 @@ package hangman;
 import java.util.List;
 import java.util.Random;
 
-import hangman.game.HangmanGame;
+import hangman.game.HangmanGameOld;
 
-public class GameDriver {
+public class GameDriverOld {
 
-	private HangmanGame game;
+	private HangmanGameOld game;
 	private int lives = 5;
 	private List<String> wordList;
 
 	public void createNewGame() {
 		Random generator = new Random();
 		int r = generator.nextInt(wordList.size());
-		game = new HangmanGame(wordList.get(r), lives);
+		game = new HangmanGameOld(wordList.get(r), lives);
 	}
 
-	public HangmanGame getCurrentGame() {
+	public HangmanGameOld getCurrentGame() {
 		return game;
 	}
 

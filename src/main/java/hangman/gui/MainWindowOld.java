@@ -3,7 +3,7 @@ package hangman.gui;
 import java.util.ArrayList;
 import java.util.List;
 
-import hangman.GameDriver;
+import hangman.GameDriverOld;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,9 +18,9 @@ import javafx.stage.Stage;
 
 @SuppressWarnings("restriction")
 
-public class MainWindow extends Application {
+public class MainWindowOld extends Application {
 
-	private GameDriver driver = new GameDriver();
+	private GameDriverOld driver = new GameDriverOld();
 	private Label remainingLivesLbl = new Label("++");
 	private Label displayedWordLbl = new Label("####");
 
@@ -28,7 +28,7 @@ public class MainWindow extends Application {
 		launch(args);
 	}
 
-	public MainWindow() {
+	public MainWindowOld() {
 		driver.setLives(5);
 
 		List<String> words = new ArrayList<>();

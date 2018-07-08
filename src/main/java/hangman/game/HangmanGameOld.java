@@ -1,12 +1,12 @@
 package hangman.game;
 
-public class HangmanGame {
+public class HangmanGameOld {
 
 	private String wordToGuess;
 	private int remainingLives;
 	private char[] displayedWord;
 
-	public HangmanGame(String wordToGuess, int lives) {
+	public HangmanGameOld(String wordToGuess, int lives) {
 		this.wordToGuess = wordToGuess.toUpperCase();
 		this.remainingLives = lives;
 		displayedWord = new char[wordToGuess.length()];
